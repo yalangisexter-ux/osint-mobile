@@ -1,0 +1,25 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'io.notrack.osint'
+    compileSdk 34
+    defaultConfig {
+        applicationId 'io.notrack.osint'
+        minSdk 24
+        targetSdk 34
+        versionCode (System.getenv("GITHUB_RUN_NUMBER") != null ? Integer.parseInt(System.getenv("GITHUB_RUN_NUMBER")) : 1)
+        versionName (System.getenv("GITHUB_RUN_NUMBER") != null ? "1.0." + System.getenv("GITHUB_RUN_NUMBER") : "1.0")
+    }
+    buildTypes { release { minifyEnabled false } }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+}
+dependencies {
+    implementation 'androidx.core:core:1.12.0'
+    implementation 'androidx.drawerlayout:drawerlayout:1.2.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'info.guardianproject:tor-android:0.4.8.16'
+    implementation 'info.guardianproject:jtorctl:0.4.5.7'
+}

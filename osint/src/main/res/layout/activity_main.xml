@@ -1,0 +1,215 @@
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#0B1020">
+
+    <!-- MAIN CONTENT -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <!-- Top bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_menu"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="#1A2444"
+                android:contentDescription="Menu"
+                android:src="@android:drawable/ic_menu_sort_by_size" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="OSINT Workspace"
+                    android:textColor="#F8FAFC"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="One-tap multi-source investigation"
+                    android:textColor="#9AA8C2"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_clear"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="#1A2444"
+                android:text="✕"
+                android:textColor="#8899BB"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Search input -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/search_input"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="Enter name or username…"
+                android:singleLine="true"
+                android:background="#141E3A"
+                android:textColor="#F8FAFC"
+                android:textColorHint="#6B7FA0"
+                android:paddingHorizontal="14dp" />
+
+            <Button
+                android:id="@+id/btn_search"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginStart="8dp"
+                android:background="#2A6CFF"
+                android:text="Search"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Quick actions row -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:scrollbars="none">
+            <LinearLayout
+                android:id="@+id/quick_actions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button android:id="@+id/quick_search" android:layout_width="wrap_content" android:layout_height="38dp" android:text="🔍 Search"   android:textColor="#DCE7FA" android:textSize="12sp" android:background="#1A2444" android:layout_marginEnd="6dp" android:textAllCaps="false"/>
+                <Button android:id="@+id/quick_tor"    android:layout_width="wrap_content" android:layout_height="38dp" android:text="🧅 Tor"     android:textColor="#C5F6FF" android:textSize="12sp" android:background="#1A2444" android:layout_marginEnd="6dp" android:textAllCaps="false"/>
+                <Button android:id="@+id/quick_dark"   android:layout_width="wrap_content" android:layout_height="38dp" android:text="🌑 Dark"    android:textColor="#E0C8FF" android:textSize="12sp" android:background="#1A2444" android:layout_marginEnd="6dp" android:textAllCaps="false"/>
+                <Button android:id="@+id/quick_onion"  android:layout_width="wrap_content" android:layout_height="38dp" android:text="🧅 Onion"   android:textColor="#A0F0FF" android:textSize="12sp" android:background="#1A2444" android:layout_marginEnd="6dp" android:textAllCaps="false"/>
+                <Button android:id="@+id/quick_vpn"    android:layout_width="wrap_content" android:layout_height="38dp" android:text="🔒 VPN"     android:textColor="#B0FFC8" android:textSize="12sp" android:background="#1A2444" android:textAllCaps="false"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- Status -->
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Ready"
+            android:textColor="#8290AA"
+            android:textSize="12sp" />
+
+        <!-- Progress -->
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="6dp"
+            android:visibility="gone" />
+
+        <!-- WEBVIEW — fills all remaining space, scrollable -->
+        <WebView
+            android:id="@+id/web"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:background="#0B1020" />
+
+    </LinearLayout>
+
+    <!-- NAVIGATION DRAWER -->
+    <ScrollView
+        android:id="@+id/drawer"
+        android:layout_width="290dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#0F1730"
+        android:fitsSystemWindows="true"
+        android:elevation="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OSINT WORKSPACE"
+                android:textColor="#F8FAFC"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SEARCH MODES"
+                android:textColor="#AEBBD2"
+                android:textStyle="bold"
+                android:textSize="11sp" />
+
+            <Button android:id="@+id/btn_dark" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="6dp" android:text="🌑  Dark Web" android:textColor="#E0C8FF" android:textAllCaps="false" android:background="#1A2444" android:textSize="13sp"/>
+            <Button android:id="@+id/btn_tor" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="6dp" android:text="🧅  Tor Browser" android:textColor="#C5F6FF" android:textAllCaps="false" android:background="#1A2444" android:textSize="13sp"/>
+            <Button android:id="@+id/btn_onion_list" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="6dp" android:text="🧅  Onion Sites" android:textColor="#A0F0FF" android:textAllCaps="false" android:background="#1A2444" android:textSize="13sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NETWORK"
+                android:textColor="#AEBBD2"
+                android:textStyle="bold"
+                android:textSize="11sp"
+                android:layout_marginTop="16dp" />
+
+            <Button android:id="@+id/btn_vpn" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="6dp" android:text="🔒  VPN Mode" android:textColor="#B0FFC8" android:textAllCaps="false" android:background="#1A2444" android:textSize="13sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="APP"
+                android:textColor="#AEBBD2"
+                android:textStyle="bold"
+                android:textSize="11sp"
+                android:layout_marginTop="16dp" />
+
+            <Button android:id="@+id/btn_settings" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="6dp" android:text="⚙️  Settings" android:textColor="#DCE7FA" android:textAllCaps="false" android:background="#1A2444" android:textSize="13sp"/>
+            <Button android:id="@+id/btn_about" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="6dp" android:text="ℹ️  About" android:textColor="#DCE7FA" android:textAllCaps="false" android:background="#1A2444" android:textSize="13sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OSINT Workspace · v1.0"
+                android:textColor="#8290AA"
+                android:textSize="11sp"
+                android:gravity="center"
+                android:paddingTop="24dp"
+                android:paddingBottom="16dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
