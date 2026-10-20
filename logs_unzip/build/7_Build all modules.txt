@@ -1,0 +1,41 @@
+﻿2026-10-20T16:47:39.9301311Z ##[group]Run ./gradlew assembleDebug --no-daemon
+2026-10-20T16:47:39.9301659Z [36;1m./gradlew assembleDebug --no-daemon[0m
+2026-10-20T16:47:39.9347600Z shell: /usr/bin/bash -e {0}
+2026-10-20T16:47:39.9347821Z env:
+2026-10-20T16:47:39.9348083Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-10-20T16:47:39.9348483Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-10-20T16:47:39.9348796Z ##[endgroup]
+2026-10-20T16:47:40.1270452Z Downloading https://services.gradle.org/distributions/gradle-8.2-bin.zip
+2026-10-20T16:47:42.0813421Z ............10%............20%............30%.............40%............50%............60%............70%.............80%............90%............100%
+2026-10-20T16:47:42.9652438Z 
+2026-10-20T16:47:42.9653484Z Welcome to Gradle 8.2!
+2026-10-20T16:47:42.9653918Z 
+2026-10-20T16:47:42.9654266Z Here are the highlights of this release:
+2026-10-20T16:47:42.9655025Z  - Kotlin DSL: new reference documentation, assignment syntax by default
+2026-10-20T16:47:42.9656048Z  - Kotlin DSL is now the default with Gradle init
+2026-10-20T16:47:42.9656696Z  - Improved suggestions to resolve errors in console output
+2026-10-20T16:47:42.9657179Z 
+2026-10-20T16:47:42.9657623Z For more details see https://docs.gradle.org/8.2/release-notes.html
+2026-10-20T16:47:42.9658163Z 
+2026-10-20T16:47:42.9659271Z To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.2/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+2026-10-20T16:47:44.6618570Z Daemon will be stopped at the end of the build 
+2026-10-20T16:47:48.7616658Z 
+2026-10-20T16:47:48.7628068Z FAILURE: Build failed with an exception.
+2026-10-20T16:47:48.7644512Z 
+2026-10-20T16:47:48.7644862Z * Where:
+2026-10-20T16:47:48.7645648Z Build file '/home/runner/work/osint-mobile/osint-mobile/osint/build.gradle' line: 1
+2026-10-20T16:47:48.7646270Z 
+2026-10-20T16:47:48.7646858Z * What went wrong:
+2026-10-20T16:47:48.7647523Z Plugin [id: 'com.android.application'] was not found in any of the following sources:
+2026-10-20T16:47:48.7648115Z 
+2026-10-20T16:47:48.7648476Z - Gradle Core Plugins (plugin is not in 'org.gradle' namespace)
+2026-10-20T16:47:48.7649402Z - Plugin Repositories (plugin dependency must include a version number for this source)
+2026-10-20T16:47:48.7650054Z 
+2026-10-20T16:47:48.7664794Z * Try:
+2026-10-20T16:47:48.7669947Z > Run with --stacktrace option to get the stack trace.
+2026-10-20T16:47:48.7675338Z > Run with --info or --debug option to get more log output.
+2026-10-20T16:47:48.7692525Z > Run with --scan to get full insights.
+2026-10-20T16:47:48.7693683Z > Get more help at https://help.gradle.org.
+2026-10-20T16:47:48.7706017Z 
+2026-10-20T16:47:48.7706269Z BUILD FAILED in 8s
+2026-10-20T16:47:49.0939871Z ##[error]Process completed with exit code 1.

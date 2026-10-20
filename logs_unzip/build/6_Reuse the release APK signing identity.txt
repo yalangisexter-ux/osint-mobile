@@ -1,0 +1,15 @@
+﻿2026-10-20T16:47:39.6000778Z ##[group]Run actions/cache@v4
+2026-10-20T16:47:39.6001031Z with:
+2026-10-20T16:47:39.6001210Z   path: ~/.android/debug.keystore
+2026-10-20T16:47:39.6001445Z   key: osnt-debug-signing-identity-v1
+2026-10-20T16:47:39.6001685Z   enableCrossOsArchive: false
+2026-10-20T16:47:39.6001893Z   fail-on-cache-miss: false
+2026-10-20T16:47:39.6002118Z   lookup-only: false
+2026-10-20T16:47:39.6002309Z   save-always: false
+2026-10-20T16:47:39.6002498Z env:
+2026-10-20T16:47:39.6002738Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-10-20T16:47:39.6003135Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.20-1/x64
+2026-10-20T16:47:39.6003438Z ##[endgroup]
+2026-10-20T16:47:39.6869673Z (node:2241) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-20T16:47:39.6870415Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-20T16:47:39.8846272Z Cache not found for input keys: osnt-debug-signing-identity-v1

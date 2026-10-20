@@ -1,7 +1,7 @@
 package io.notrack.osint;
 
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
+
 import android.app.DownloadManager;
 import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;

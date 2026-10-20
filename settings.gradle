@@ -1,4 +1,2 @@
-rootProject.name = 'osnt-tools'
+rootProject.name = 'osint-mobile'
 include ':osint'
-include ':master'
-include ':slave'
